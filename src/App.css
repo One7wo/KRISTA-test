@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+.leaflet-container {
+  width: 100wh;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.form {
+  cursor: auto;
+  z-index: 999;
+  position: relative;
+  left: 20px;
+  top: 100px;
+  width: 350px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  height: auto;
+  max-height: 80%;
+  overflow: auto;
+  padding: 12px;
+  background: rgb(243, 243, 243);
+  border-radius: 5px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 630px) {
+  .form {
+    max-width: 50%;
+    max-height: 30%;
+  }
+}
+
+.mark-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.mark-input {
+  height: 25px;
+  margin-bottom: 10px;
+  outline: none;
+  padding: 2px 5px;
+
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+}
+
+.mark-title {
+  height: 25px;
+  width: 100%;
+  margin-right: 10px;
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 3px 5px 3px 30px;
+  position: relative;
+
+  background: #ffffff;
+}
+
+.mark-title::before {
+  content: url("./assets/img/maps-and-flags (1).png");
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  opacity: 0.5;
+
+  left: 3px;
+  bottom: 12px;
+}
+
+.mark-input:focus {
+  border: 1px solid rgb(196, 196, 196);
+}
+.delete-mark {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.delete-mark:hover {
+  color: rgb(231, 46, 46);
+  font-weight: bold;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.del {
+  margin-top: -5px;
+  font-size: 28px;
+}
+.form__add-button {
+  margin: 0 auto;
+  font-size: 28px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.form__add-button:hover {
+  font-weight: bold;
+  color: rgb(112, 219, 183);
 }
