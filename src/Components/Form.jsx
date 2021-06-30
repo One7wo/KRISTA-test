@@ -36,7 +36,7 @@ export default function Form({ marks, setMarks }) {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => {
-          if (e.keyCode === 13) {
+          if (e.keyCode === 13 && value.length > 0) {
             createMark(value);
             setValue("");
           }

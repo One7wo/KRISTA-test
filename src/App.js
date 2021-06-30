@@ -15,7 +15,6 @@ function App() {
 
   const [marks, setMarks] = useState([]);
 
-  const [lineMove, setLineMove] = useState(false)
 
   useEffect(() => {
     document.getElementsByClassName('leaflet-marker-pane')[0].style.transform = 'translate(-13px, -40px)'
@@ -30,12 +29,10 @@ function App() {
         <ReactLeafletGoogleLayer apiKey={API} type={'roadmap'} />
         {marks.map((obj, i) => (
           <div key={i}>
-
-            {marks.length > 1 ? <Polyline positions={route(marks)} color={'#70c7f2'} /> : null}
-            <LocMarker position={[obj.lat, obj.lng]} name={obj.name} index={i} markerList={marks} move={setLineMove} />
+            <LocMarker position={[obj.lat, obj.lng]} setMarks={setMarks} name={obj.name} index={i} markerList={marks} />
           </div>
         ))}
-
+        {marks.length > 1 ? <Polyline positions={route(marks)} color={'#70c7f2'} /> : null}
         <Form marks={marks} setMarks={setMarks} />
       </MapContainer>
 
